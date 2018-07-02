@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26730.10
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameServer", "OldEERemake\GameServer.csproj", "{E586E211-B2DB-4265-9C01-7A1F93F78E27}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatClient", "ChatClient\ChatClient.csproj", "{FEA51DA8-ED07-4536-B12E-30D16B9708D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServer", "ChatServer\ChatServer.csproj", "{CFC25B86-851B-477C-A0C1-8675AA354D90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GameServer", "GameServer\GameServer.csproj", "{E586E211-B2DB-4265-9C01-7A1F93F78E27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E586E211-B2DB-4265-9C01-7A1F93F78E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E586E211-B2DB-4265-9C01-7A1F93F78E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E586E211-B2DB-4265-9C01-7A1F93F78E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E586E211-B2DB-4265-9C01-7A1F93F78E27}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FEA51DA8-ED07-4536-B12E-30D16B9708D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{FEA51DA8-ED07-4536-B12E-30D16B9708D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEA51DA8-ED07-4536-B12E-30D16B9708D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -27,6 +23,10 @@ Global
 		{CFC25B86-851B-477C-A0C1-8675AA354D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CFC25B86-851B-477C-A0C1-8675AA354D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CFC25B86-851B-477C-A0C1-8675AA354D90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E586E211-B2DB-4265-9C01-7A1F93F78E27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E586E211-B2DB-4265-9C01-7A1F93F78E27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E586E211-B2DB-4265-9C01-7A1F93F78E27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E586E211-B2DB-4265-9C01-7A1F93F78E27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -215,10 +215,10 @@ namespace ChatServer
 
                                         if (min > max)
                                         {
-                                            response.AppendLine("Max cannot be greater than min.");
+                                            response.AppendLine("Min cannot be greater than max.");
                                             break;
                                         }
-                                        BroadcastInited("roll", plr.Username, rnd.Next(min, max + 1));
+                                        BroadcastInited("roll", plr.Username, rnd.Next(min, max + 1), min, max);
                                     }
                                     break;
                                 default:
