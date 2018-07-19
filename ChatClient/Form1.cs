@@ -62,10 +62,10 @@ namespace ChatClient
 
                 if (version != lastVersion)
                 {
-                    var result = MessageBox.Show($"New version of flash projector is available!" + Environment.NewLine +
-                         $"Old version: {lastVersion} | New version: {version}" + Environment.NewLine +
-                         $"Download URL: {url}" + Environment.NewLine +
-                         $"Do you want to download it?", "Flash update available", lastVersion == "firstrun" ? MessageBoxButtons.OKCancel : MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                    var result = MessageBox.Show("New version of flash projector is available!" + Environment.NewLine +
+                         String.Format("Old version: {0} | New version: {1}", lastVersion, version) + Environment.NewLine +
+                         String.Format("Download URL: {0}", url) + Environment.NewLine +
+                         "Do you want to download it?", "Flash update available", lastVersion == "firstrun" ? MessageBoxButtons.OKCancel : MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                     if (result == DialogResult.Yes || result == DialogResult.OK)
                     {
                         File.WriteAllBytes(DirectoryName + "/" + FileName, client.DownloadData(url));
@@ -132,22 +132,22 @@ namespace ChatClient
                         users.Add(m.GetString(1));
                         UpdateOnline();
                     }
-                    UpdateChat($"{m.GetString(0)} is now {m.GetString(1)}.", Color.Yellow);
+                    UpdateChat(String.Format("{0} is now {1}.", m.GetString(0), m.GetString(1)), Color.Yellow);
                     break;
                 case "oldsay":
-                    UpdateChat($"{m.GetString(0)}: {m.GetString(1)}", Color.Gray);
+                    UpdateChat(String.Format("{0}: {1}", m.GetString(0), m.GetString(1)), Color.Gray);
                     break;
                 case "say":
-                    UpdateChat($"{m.GetString(0)}: {m.GetString(1)}", Color.White);
+                    UpdateChat(String.Format("{0}: {1}", m.GetString(0), m.GetString(1)), Color.White);
                     break;
                 case "me":
-                    UpdateChat($"* {m.GetString(0)} {m.GetString(1)}", Color.YellowGreen);
+                    UpdateChat(String.Format("* {0} {1}", m.GetString(0), m.GetString(1)), Color.YellowGreen);
                     break;
                 case "system":
                     UpdateChat(m.GetString(0), Color.OrangeRed);
                     break;
                 case "roll":
-                    UpdateChat($"* {m.GetString(0)} rolled {m.GetInt(1)}. [{m.GetInt(2)}-{m.GetInt(3)}]", Color.LightSeaGreen);
+                    UpdateChat(String.Format("* {0} rolled {1}. [{2}-{3}]", m.GetString(0), m.GetInt(1), m.GetInt(2), m.GetInt(3)), Color.LightSeaGreen);
                     break;
                 case "online":
                     for (uint i = 0; i < m.Count; i++)
@@ -158,12 +158,12 @@ namespace ChatClient
                     break;
                 case "add":
                     users.Add(m.GetString(0));
-                    UpdateChat($"{m.GetString(0)} has joined the chat.", Color.CadetBlue);
+                    UpdateChat(String.Format("{0} has joined the chat.", m.GetString(0)), Color.CadetBlue);
                     UpdateOnline();
                     break;
                 case "left":
                     users.Remove(m.GetString(0));
-                    UpdateChat($"{m.GetString(0)} has left the chat.", Color.CadetBlue);
+                    UpdateChat(String.Format("{0} has left the chat.", m.GetString(0)), Color.CadetBlue);
                     UpdateOnline();
                     break;
             }
@@ -362,20 +362,20 @@ namespace ChatClient
                 act();
             }
         }
-        public static Task SafeBeginInvoke(this Control c, Action act)
-        {
-            return Task.Run(() =>
-            {
-                if (c.InvokeRequired)
-                {
-                    c.Invoke(act);
-                }
-                else
-                {
-                    act();
-                }
-            });
-        }
+        //public static Task SafeBeginInvoke(this Control c, Action act)
+        //{
+        //    return Task.Run(() =>
+        //    {
+        //        if (c.InvokeRequired)
+        //        {
+        //            c.Invoke(act);
+        //        }
+        //        else
+        //        {
+        //            act();
+        //        }
+        //    });
+        //}
         public static void AppendText(this RichTextBox box, string text, Color color)
         {
             box.SelectionStart = box.TextLength;
